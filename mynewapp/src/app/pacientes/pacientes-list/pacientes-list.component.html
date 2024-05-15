@@ -1,0 +1,34 @@
+<div style="background-color:darkcyan; display: flex; align-items: center;">
+  <h1> Pacientes </h1>
+</div>
+<div class="table-container">
+  <div class="col-6">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let paciente of pacientes ">
+            <td>
+              <dd>{{paciente.nombre}}</dd>
+            </td>
+            <td>
+              <dd>{{paciente.edad}}</dd></td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+<div class="table-container">
+  <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Número de menores: {{ menores }}</th>
+                </tr>
+            </thead>
+        </table> 
+    </div>
