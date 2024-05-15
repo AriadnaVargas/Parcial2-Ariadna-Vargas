@@ -9,7 +9,7 @@ import { PacienteDetail } from './PacienteDetail';
 })
 export class PacientesService {
 
-private apiUrl: string = environment.baseUrl + 'pacientes';
+private apiUrl: string = environment.baseUrl;
 constructor(private http: HttpClient) { }
 
 getPacientes(): Observable<PacienteDetail[]>{

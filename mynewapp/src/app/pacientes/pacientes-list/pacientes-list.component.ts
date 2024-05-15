@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PacienteDetail } from '../PacienteDetail'; 
+import { PacienteDetail } from '../PacienteDetail';
+import { Paciente } from '../Paciente'; 
 import { PacientesService } from '../pacientes.service';
 @Component({
   selector: 'app-pacientes-list',
@@ -9,6 +10,7 @@ import { PacientesService } from '../pacientes.service';
 export class PacientesListComponent implements OnInit {
 
   pacientes: Array<PacienteDetail> = [];
+  pacientesNumero: Array<Paciente> = [];
   selectedPaciente!: PacienteDetail;
   selected:boolean = false;
   menores: number=0;
@@ -23,7 +25,7 @@ export class PacientesListComponent implements OnInit {
   }
   ngOnInit() {
     this.getPacientes();
-    this.menores= this.pacienteService.darMenores(this.pacientes);
+    this.menores= this.pacienteService.darMenores(this.pacientesNumero);
   }
 
   onSelected(paciente: PacienteDetail): void{
