@@ -18,7 +18,7 @@
         <tbody>
           <tr *ngFor="let paciente of pacientes ">
             <td>
-              <dd>{{paciente.nombre}}</dd>
+              <dd style = "cursor:pointer" (click)="onSelected(paciente)" > {{paciente.nombre}}</dd>
             </td>
             <td>
               <dd>{{paciente.edad}}</dd></td>
