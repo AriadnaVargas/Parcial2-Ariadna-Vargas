@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Paciente } from '../Paciente'; 
+import { PacienteDetail } from '../PacienteDetail'; 
 import { PacientesService } from '../pacientes.service';
 @Component({
   selector: 'app-pacientes-list',
@@ -8,7 +8,9 @@ import { PacientesService } from '../pacientes.service';
 })
 export class PacientesListComponent implements OnInit {
 
-  pacientes: Array<Paciente> = [];
+  pacientes: Array<PacienteDetail> = [];
+  selectedPaciente!: PacienteDetail;
+  selected:boolean = false;
   menores: number=0;
   constructor(private pacienteService: PacientesService) { }
 
@@ -20,7 +22,13 @@ export class PacientesListComponent implements OnInit {
     );
   }
   ngOnInit() {
+    this.getPacientes();
     this.menores= this.pacienteService.darMenores(this.pacientes);
+  }
+
+  onSelected(paciente: PacienteDetail): void{
+    this.selectedPaciente = paciente;
+    this.selected = true;
   }
 
 }

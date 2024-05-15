@@ -1,3 +1,8 @@
+<div *ngIf="selected">
+  <app-pacientes-detail>[pacienteDetail]="selectedPaciente"</app-pacientes-detail>
+</div>
+
+
 <div style="background-color:darkcyan; display: flex; align-items: center;">
   <h1> Pacientes </h1>
 </div>
@@ -6,7 +11,6 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            
             <th scope="col">Nombre</th>
             <th scope="col">Edad</th>
           </tr>

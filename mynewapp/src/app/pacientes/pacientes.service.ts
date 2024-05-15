@@ -3,16 +3,17 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Paciente } from './Paciente';
+import { PacienteDetail } from './PacienteDetail';
 @Injectable({
   providedIn: 'root'
 })
 export class PacientesService {
 
- private apiUrl: string = environment.baseUrl + 'pacientes';
+private apiUrl: string = environment.baseUrl + 'pacientes';
 constructor(private http: HttpClient) { }
 
-getPacientes(): Observable<Paciente[]>{
-  return this.http.get<Paciente[]>(this.apiUrl);
+getPacientes(): Observable<PacienteDetail[]>{
+  return this.http.get<PacienteDetail[]>(this.apiUrl);
 }
 
 darMenores(pacientes: Paciente[]): number{
